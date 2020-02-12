@@ -1,5 +1,7 @@
 # react-ios-springboard
 
+![preview](./preview.gif)
+
 ## steps
 
 - `yarn add -D parcel-bundler`
