@@ -6,7 +6,7 @@ const Wrapper = styled(animated.div)`
   /* backdrop-filter: blur(20px); */
   height: 100%;
   left: 0;
-  pointer-events: none;
+  /* pointer-events: none; */
   position: absolute;
   top: 0;
   width: 100%;
