@@ -129,6 +129,8 @@ const OpenFolderBackdrop = ({isVisible}) => {
 };
 ```
 
+![preview1](./preview/backdrop.gif)
+
 实现点击全屏背景模糊效果(双向)
 
 ```js
@@ -169,3 +171,7 @@ const OpenFolderBackdrop = ({ isVisible, onClose: pushClose }) => {
   return <Wrapper onClick={() => pushClose()} style={style} />;
 };
 ```
+
+> 使用 ccs3-pointer-events 控制动画
+
+![preview1](./preview/backdrop-sring.gif)
