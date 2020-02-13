@@ -41,7 +41,7 @@ const Root = () => {
     <>
       <GlobalStyle />
       <Wrapper>
-        <Springboard folders={FOLDERS}/>
+        <Springboard folders={FOLDERS} />
       </Wrapper>
     </>
   );
