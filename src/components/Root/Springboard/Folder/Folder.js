@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
+
+import useInterpolatedStyles from './_useInterpolatedStyles';
 
 import fackbookIcon from './facebook-logo.png';
 import whatsappIcon from './whatsapp-logo.png';
@@ -40,10 +42,18 @@ const AppIcon = styled.img`
   width: 100%;
 `;
 
-const Folder = ({ folder, onOpen: pushOpen }) => {
+const Folder = ({ folder, onOpen: pushOpen, parentRef, isOpened }) => {
+  const folderIconsRef = useRef();
+
+  const { folderIconsStyle } = useInterpolatedStyles({
+    folderIconsRef,
+    parentRef,
+    isOpened,
+  });
+
   return (
     <Wrapper onClick={() => pushOpen()}>
-      <FolderIcons>
+      <FolderIcons ref={folderIconsRef}>
         <AppIcon src={fackbookIcon} />
         <AppIcon src={whatsappIcon} />
         <AppIcon src={messengerIcon} />

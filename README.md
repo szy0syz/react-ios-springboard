@@ -172,6 +172,6 @@ const OpenFolderBackdrop = ({ isVisible, onClose: pushClose }) => {
 };
 ```
 
-> 使用 ccs3-pointer-events 控制动画
+> 原来可以使用 ccs3-pointer-events 控制动画！
 
 ![preview1](./preview/backdrop-sring.gif)

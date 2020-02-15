@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import Folder from './Folder';
@@ -22,13 +22,20 @@ const Wrapper = styled.div`
 `;
 
 const Springboard = ({ folders }) => {
+  const wrapperRef = useRef();
   const [openedFolderId, setOpenedFolderId] = useState(null);
 
   return (
-    <Wrapper>
+    <Wrapper ref={wrapperRef}>
       <OpenFolderBackdrop isVisible={openedFolderId !== null} onClose={() => setOpenedFolderId(null)} />
       {folders.map(folder => (
-        <Folder folder={folder} key={folder.id} onOpen={() => setOpenedFolderId(folder.id)} />
+        <Folder
+          folder={folder}
+          key={folder.id}
+          isOpened={folder.id === openedFolderId}
+          parentRef={wrapperRef}
+          onOpen={() => setOpenedFolderId(folder.id)}
+        />
       ))}
     </Wrapper>
   );
